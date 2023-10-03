@@ -80,9 +80,56 @@ public class JankenController {
    * @return
    */
   @PostMapping("/Janken")
-  public String sample25(@RequestParam String name1,ModelMap model) {
+  public String Janken(@RequestParam String name1, ModelMap model) {
     model.addAttribute("Name", name1);
     return "janken.html";
   }
 
+  /**
+   *
+   * @param model
+   * @return
+   */
+  @GetMapping("/Gu")
+  public String Gu(ModelMap model) {
+    String my = "Gu";
+    String cpu = "Pa";
+    String   ke = "結果 You Lose";
+    model.addAttribute("Myte", my);
+    model.addAttribute("Cpute", cpu);
+    model.addAttribute("kek", ke);
+    return "janken.html";
+  }
+
+  /**
+   *
+   * @param model
+   * @return
+   */
+  @GetMapping("/Cho")
+  public String Cho(ModelMap model) {
+    String my = "Cho";
+    String cpu = "Cho";
+    String   ke = "結果 Drow";
+    model.addAttribute("Myte", my);
+    model.addAttribute("Cpute", cpu);
+    model.addAttribute("kek", ke);
+    return "janken.html";
+  }
+
+  /**
+   *
+   * @param model
+   * @return
+   */
+  @GetMapping("/Pa")
+  public String Pa(ModelMap model) {
+    String my = "Pa";
+    String cpu = "Cho";
+    String   ke = "結果 You Win!";
+    model.addAttribute("Myte", my);
+    model.addAttribute("Cpute", cpu);
+    model.addAttribute("kek", ke);
+    return "janken.html";
+  }
 }
