@@ -52,9 +52,11 @@ public class Sample3AuthConfiguration {
         .password("{bcrypt}$2y$10$tlGOvX71syDdp3WoE4KxJu7Sk1OLUfxZZUSiXAYqi9XyiFB.nQvlO").roles("USER").build();
     UserDetails user2 = User.withUsername("user2")
         .password("{bcrypt}$2y$10$OPj5lbajaV0Y2ra7T7z7o.qlYnJGv2q7jBB9Rxzf7NobkdE6wPkPy").roles("USER").build();
+    UserDetails user3 = User.withUsername("ほんだ")
+        .password("{bcrypt}$2y$10$L8CR6oiP46HcAPoon9QVbuJ3U0o1Oefm0UBaw9PyAv/T8Q18G.LBa").roles("USER").build();
 
     // 生成したユーザをImMemoryUserDetailsManagerに渡す（いくつでも良い）
-    return new InMemoryUserDetailsManager(user1, user2);
+    return new InMemoryUserDetailsManager(user1, user2, user3);
   }
 
 }
