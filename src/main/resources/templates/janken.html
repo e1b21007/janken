@@ -1,6 +1,7 @@
 <html>
 
 <head>
+  <meta charset="utf-8">
   <title>応用演習 じゃんけんゲーム</title>
 </head>
 
@@ -10,26 +11,47 @@
   </h1>
   <!--roomがあった場合に表示される-->
   <!--objectはdivの中でroomオブジェクトのフィールドにアクセスすることを示す-->
-  <div th:if="${room}">
+<!--  <div th:if="${room}">
     エントリー
     <ul>
-    <!--eachは所謂for each．この場合roomオブジェクトのusersフィールドにあるすべてのデータを一通り表示する.thが指定されているので[]が不要になる-->
+      eachは所謂for each．この場合roomオブジェクトのusersフィールドにあるすべてのデータを一通り表示する.thが指定されているので[]が不要になる
       <li th:each="user : ${room.users}">[[${user}]]</li>
     </ul>
   </div>
+-->
   <p>
   <div th:if="${Name}">
     Hi [[${Name}]]
   </div>
   </p>
-  <a href="/Gu">ぐー</a>
-  <a href="/Cho">ちょき</a>
-  <a href="/Pa">ぱー</a>
-    <div th:if="${Myte}">
-      貴方の手 [[${Myte}]]<br>
-      相手の手 [[${Cpute}]]<br>
-      [[${kek}]]
-    </div>
+  <h2>エントリー</h2>
+  <p th:if="${users5}">
+  <!--statはステータス変数
+    https://www.ne.jp/asahi/hishidama/home/tech/java/spring/boot/thymeleaf/th_each.html
+  -->
+    <li th:each="user : ${users5}">
+      <a th:href="@{/match(id=${user.id})}">
+        [[${user.username}]]
+      </a>
+    </li>
+    </p>
+    <h2>試合結果</h2>
+  <p th:if="${match5}">
+    <!--statはステータス変数
+      https://www.ne.jp/asahi/hishidama/home/tech/java/spring/boot/thymeleaf/th_each.html
+    -->
+  <div th:each="mat,stat:${match5}">
+    <tr>
+      <td>id:[[${mat.id}]]</td>
+      <td>user1:[[${mat.user1}]]</td>
+      <td>user2:[[${mat.user2}]]</td>
+      <td>user1Hand:[[${mat.user1Hand}]]</td>
+      <td>user2Hand:[[${mat.user2Hand}]]</td>
+    </tr>
+  </div>
+  </p>
+
   <div><a href="/logout">ログアウト</a></div>
 
+</body>
 </body>

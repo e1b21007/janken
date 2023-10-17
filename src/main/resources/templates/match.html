@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>じゃんけん対戦</title>
+</head>
+
+<body>
+  <div><a href="/logout">ログアウト</a></div>
+  <h1>Match</h1>
+  <h2>
+    [[${name}]] V.S. [[${teki.username}]]
+  </h2>
+
+  <a th:href="@{/fight(id=${id}, te=1)}">ぐー</a>
+  <a th:href="@{/fight(id=${id}, te=2)}">ちょき</a>
+  <a th:href="@{/fight(id=${id}, te=3)}">ぱー</a>
+  <div th:if="${Myte}">
+    貴方の手 [[${Myte}]]<br>
+    相手の手 [[${Cpute}]]<br>
+    [[${kek}]]
+  </div>
+  <br>
+  <a href="/janken">もどる</a>
+
+</body>
+
+</html>
