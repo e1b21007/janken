@@ -35,6 +35,19 @@
       </a>
     </li>
     </p>
+
+    <h2>アクティブな試合</h2>
+  <p th:if="${matchinfo6}">
+  <div th:each="mati,stat:${matchinfo6}">
+    <tr>
+      <td>id:[[${mati.id}]]</td>
+      <td>user1:[[${mati.user1}]]</td>
+      <td>user2:[[${mati.user2}]]</td>
+      <td>isActive::[[${mati.isActive}]]</td>
+    </tr>
+  </div>
+  </p>
+
     <h2>試合結果</h2>
   <p th:if="${match5}">
     <!--statはステータス変数

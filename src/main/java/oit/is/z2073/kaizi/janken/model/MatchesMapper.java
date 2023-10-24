@@ -22,13 +22,13 @@ public interface MatchesMapper {
    *
    * @param Match
    */
-  @Insert("INSERT INTO Matches (user1, user2, user1Hand, user2Hand) VALUES (#{user1},#{user2},#{user1Hand},#{user2Hand});")
+  @Insert("INSERT INTO Matches (user1, user2, user1Hand, user2Hand,isActive) VALUES (#{user1},#{user2},#{user1Hand},#{user2Hand},#{isActive});")
   @Options(useGeneratedKeys = true, keyColumn = "id", keyProperty = "id")
   void insertMatch(Matches Match);
 
-  @Insert("INSERT INTO Matches (user1, user2, user1Hand, user2Hand) VALUES (#{use1},#{use2},#{use1Hand},#{use2Hand});")
+  @Insert("INSERT INTO Matches (user1, user2, user1Hand, user2Hand,isActive) VALUES (#{use1},#{use2},#{use1Hand},#{use2Hand},#{isActive});")
   @Options(useGeneratedKeys = true, keyColumn = "id", keyProperty = "id")
-  void inputMatch(int use1, int use2, String use1Hnad, String use2Hand);
+  void inputMatch(int use1, int use2, String use1Hnad, String use2Hand, Boolean isActive);
 
   @Select("SELECT * from Matches")
   ArrayList<Matches> SelectAllMatch();

@@ -6,6 +6,15 @@ public class Matches {
   int user2;
   String user1Hand;
   String user2Hand;
+  Boolean isActive;
+
+  public Boolean getIsActive() {
+    return isActive;
+  }
+
+  public void setIsActive(Boolean isActive) {
+    this.isActive = isActive;
+  }
 
   public int getUser1() {
     return user1;
