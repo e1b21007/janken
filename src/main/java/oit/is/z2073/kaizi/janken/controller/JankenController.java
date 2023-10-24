@@ -68,6 +68,8 @@ public class JankenController {
     model.addAttribute("users5", users5);
     ArrayList<Matches> match5 = MatchMapper.SelectAllMatch();
     model.addAttribute("match5", match5);
+    ArrayList<MatchInfo> matchinfo = MatchInfoMapper.SelecttrueMatchInfo();
+    model.addAttribute("matchinfo6", matchinfo);
     return "janken.html";
   }
 

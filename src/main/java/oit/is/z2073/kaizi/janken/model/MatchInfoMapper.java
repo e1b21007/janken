@@ -28,4 +28,7 @@ public interface MatchInfoMapper {
   @Select("SELECT * from MatchInfo")
   ArrayList<MatchInfo> SelectAllMatchInfo();
 
+
+  @Select("SELECT * from MatchInfo where isActive = true")
+  ArrayList<MatchInfo> SelecttrueMatchInfo();
 }
